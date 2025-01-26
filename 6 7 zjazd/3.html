@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tabela Aut</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f4f4f9;
+        }
+        table {
+            border-collapse: collapse;
+            width: 80%;
+            max-width: 600px;
+            background-color: white;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 10px;
+            text-align: center;
+        }
+        th {
+            background-color: #00796b;
+            color: white;
+        }
+        tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+    </style>
+</head>
+<body>
+    <div id="tabela"></div>
+
+    <script>
+        const auta = [
+            { model: 'BMW E90', rok: 2010, przebieg: 150000, cena_wyjsciowa: 30000, cena_koncowa: 25000 },
+            { model: 'Audi A4', rok: 2015, przebieg: 90000, cena_wyjsciowa: 40000, cena_koncowa: 35000 },
+            { model: 'Mercedes C200', rok: 2018, przebieg: 50000, cena_wyjsciowa: 50000, cena_koncowa: 47000 },
+            { model: 'Toyota Corolla', rok: 2020, przebieg: 20000, cena_wyjsciowa: 60000, cena_koncowa: 58000 }
+        ];
+
+        const tabelaDiv = document.getElementById('tabela');
+        const tabela = document.createElement('table');
+        const naglowek = document.createElement('tr');
+
+        ['Model', 'Rok', 'Przebieg', 'Cena Wyjściowa', 'Cena Końcowa'].forEach(tekst => {
+            const th = document.createElement('th');
+            th.textContent = tekst;
+            naglowek.appendChild(th);
+        });
+
+        tabela.appendChild(naglowek);
+
+        auta.forEach(auto => {
+            const wiersz = document.createElement('tr');
+            Object.values(auto).forEach(wartosc => {
+                const td = document.createElement('td');
+                td.textContent = wartosc;
+                wiersz.appendChild(td);
+            });
+            tabela.appendChild(wiersz);
+        });
+
+        tabelaDiv.appendChild(tabela);
+    </script>
+</body>
+</html>

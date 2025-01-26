@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notowania giełdowe</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Notowania giełdowe</h1>
+        <table id="stock-table">
+            <thead>
+                <tr>
+                    <th>Akcja</th>
+                    <th>Cena</th>
+                    <th>Zmiana</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Wiersze tabeli będą wypełniane dynamicznie -->
+            </tbody>
+        </table>
+
+        <div id="news-rotator">
+            <h2>Ostatnie newsy:</h2>
+            <div id="news"></div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="skrypt.js"></script>
+</body>
+</html>

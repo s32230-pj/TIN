@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styl.css">
+    <title>Responsywne Menu</title>
+</head>
+<body>
+
+<div id="container">
+    <div class="hamburger" id="hamburger">&#9776;</div>
+
+    <div class="lista">
+        <ul id="nav-list">
+            <li><a href="#default">Owoce i Warzywa</a>
+                <ol><li><a id="klikane">Ananas</a></li></ol>
+                <ol><li><a id="klikane">Papryka</a></li></ol>
+                <ol><a id="klikane">Pomarańcza</a></li></ol>
+            </li>
+            <li><a href="#ferdek">Fernando Alonso - Biografia</a></li>
+            <li><a href="#formularz">Formularz</a></li>
+            <li><a href="#tabelka">Tabelka</a></li>
+        </ul>
+    </div>
+
+    <div class="main-content">
+        <h1 id="ferdek">Fernando Alonso</h1>
+        <p><b>Fernando Alonso Díaz</b>, born 29 July 1981 is a Spanish racing driver, currently competing in Formula One for Aston Martin.</p>
+        <img alt="Fernando Alonso AMR 2023" width="400" height="200" src="img/ferdek.jpg">
+        <h2>Osiągnięcia</h2>
+        <p>Alonso has won two Formula One World Drivers' Championship titles, which he won in 2005 and 2006 with Renault.<br> In endurance racing, Alonso won the 2018–19 FIA World Endurance Championship and is a two-time winner of the 24 Hours of Le Mans with Toyota,<br> and remains the only driver to have won both the World Drivers' Championship and the World Endurance/Sportscar Championship.</p>
+
+        <h1>Drugi nagłówek</h1>
+
+        <h3>Formularz kontaktowy</h3>
+        <p>Wprowadź swoje dane</p>
+        <form id="formularz">
+        <div id="formularzlewo">
+            <label for="imienazwisko">Imię i nazwisko:</label><br>
+            <input id="imienazwisko" type="text"><br>
+
+            <label for="opis">Opis</label><br>
+            <textarea placeholder="Napisz coś o sobie" id="opis"></textarea> <br>
+          </div>
+          <div id="formularzprawo">
+            <label for="wiek">Wiek</label><br>
+            <select id="wiek" name="lata">
+                <option value="default">Wybierz</option>
+                <option value="16">16</option>
+                <option value="17">17</option>
+                <option value="18">18</option>
+                <option value="19">19</option>
+                <option value="20">20</option>
+                <option value="21">21</option>
+                <option value="22">22</option>
+                <option value="23">23</option>
+                <option value="24">24</option>
+                <option value="25">25</option>
+                <option value="26">26</option>
+                <option value="27">27</option>
+            </select><br>
+
+            <label for="A">A</label>  
+            <input type="radio" id="A" name="xd" value="A"><br>
+            <label for="B">B</label>
+            <input type="radio" id="B" name="xd" value="B"><br>
+            <label for="C">C</label>  
+            <input type="radio" id="C" name="xd" value="C"><br>  
+            <input value="Wyślij" type="submit">
+          </div>
+        </form>
+
+        <table id="tabelka">
+            <thead>
+                <tr>
+                    <th>pierwsza kolumna</th>
+                    <th>druga kolumna</th>
+                    <th>trzecia kolumna</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>1</td>
+                    <td>1</td>
+                    <td>1</td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>2</td>
+                    <td>2</td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>3</td>
+                    <td>3</td>
+                </tr>
+                <tr>
+                    <td>4</td>
+                    <td>4</td>
+                    <td>4</td>
+                </tr>
+                <tr>
+                    <td>5</td>
+                    <td>5</td>
+                    <td>5</td>
+                </tr>
+                <tr>
+                    <td>6</td>
+                    <td>6</td>
+                    <td>6</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <b>Text 1</b><br>
+        <i>Text 2</i><br>
+        <p>Text 3</p><br>
+    </div>
+</div>
+
+<footer><p>Stopka</p><br><p>Stopka</p></footer>
+
+<script>
+
+    document.getElementById("hamburger").addEventListener("click", function() {
+        var menu = document.getElementById("nav-list");
+        menu.classList.toggle("active");
+    });
+</script>
+
+</body>
+</html>

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <style>
+        .container {
+            margin-bottom: 20px;
+        }
+        .div-box {
+            width: 75px;
+            height: 75px;
+            margin: 10px;
+            background-color: lightgray;
+            display: inline-block;
+            text-align: center;
+            line-height: 100px;
+            border: 1px solid black;
+        }
+    </style>
+</head>
+<body>
+    <div class="container" id="divContainer">
+        <div class="div-box">Div 1</div>
+        <div class="div-box">Div 2</div>
+        <div class="div-box">Div 3</div>
+        <div class="div-box">Div 4</div>
+    </div>
+
+    <button onclick="addDiv()">Dodaj div</button>
+    <button onclick="removeFirstDiv()">Usuń pierwszy div</button>
+    <button onclick="changeColorDiv3()">Zmień kolor diva nr 3</button>
+    <button onclick="updateText()">Wpisz tekst do wszystkich divów</button>
+
+    <script>
+        const container = document.getElementById('divContainer');
+
+        function addDiv() {
+            const newDiv = document.createElement('div');
+            newDiv.className = 'div-box';
+            newDiv.textContent = `Div ${container.children.length + 1}`;
+            container.appendChild(newDiv);
+        }
+
+        function removeFirstDiv() {
+            if (container.firstElementChild) {
+                container.removeChild(container.firstElementChild);
+            } else {
+                alert('Nie ma więcej divów do usunięcia!');
+            }
+        }
+
+         function changeColorDiv3() {
+            const divs = container.children;
+            if (divs.length >= 3) {
+                const randomColor = `#${Math.floor(Math.random() * 16777215).toString(16)}`;
+                divs[2].style.backgroundColor = randomColor;
+            } else {
+                alert('Nie istnieje trzeci div!');
+            }
+        }
+
+        function updateText() {
+            const divs = container.children;
+            for (const div of divs) {
+                div.textContent = 'Nowy tekst';
+            }
+        }
+    </script>
+</body>
+</html>

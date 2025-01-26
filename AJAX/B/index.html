@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Galeria Psów</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Galeria Psów</h1>
+        <label for="rasy-select">Wybierz rasę:</label>
+        <select id="rasy-select">
+            <option value="">Wybierz rasę</option>
+        </select>
+        <br>
+        <br>
+        <h2>Zdjęcia:</h2>
+        <div id="dog-list-container"></div>
+        <br>
+        <h3>Dodaj nowe zdjęcie:</h3>
+        <form id="dodaj-zdjecie-form">
+            <label for="album-select">Wybierz album:</label>
+            <select id="album-select">
+                <option value="">Wybierz album</option>
+            </select>
+            <br>
+            <label for="url-input">URL zdjęcia:</label>
+            <input type="url" id="url-input" required>
+            <button type="submit">Dodaj zdjęcie</button>
+        </form>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="skrypt.js"></script>
+</body>
+</html>

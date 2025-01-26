@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kalkulator</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #e0f7fa;
+        }
+        .kalkulator {
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            text-align: center;
+            width: 300px;
+        }
+        .wynik {
+            font-size: 2em;
+            margin-bottom: 20px;
+            color: #00796b;
+        }
+        .wejscia {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+        input, select {
+            margin: 5px;
+            padding: 10px;
+            font-size: 1em;
+            width: 80px;
+        }
+        button {
+            background-color: #00796b;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            padding: 10px 20px;
+            font-size: 1em;
+        }
+        button:hover {
+            background-color: #004d40;
+        }
+    </style>
+</head>
+<body>
+    <div class="kalkulator">
+        <div class="wynik" id="wynik">0</div>
+        <input type="number" id="pierwsza" placeholder="Pierwsza liczba">
+        <input type="number" id="druga" placeholder="Druga liczba">
+        <select id="dzialanie">
+            <option value="dodawanie">+</option>
+            <option value="odejmowanie">-</option>
+            <option value="mnozenie">*</option>
+            <option value="dzielenie">/</option>
+        </select>
+        <button onclick="oblicz()">Oblicz</button>
+    </div>
+
+    <script>
+        function oblicz() {
+            const pierwsza = parseFloat(document.getElementById('pierwsza').value);
+            const druga = parseFloat(document.getElementById('druga').value);
+            const dzialanie = document.getElementById('dzialanie').value;
+            const wynikDiv = document.getElementById('wynik');
+            let wynik;
+
+            if (isNaN(pierwsza) || isNaN(druga)) {
+                wynikDiv.textContent = 'Błąd';
+                return;
+            }
+
+            switch (dzialanie) {
+                case 'dodawanie':
+                    wynik = pierwsza + druga;
+                    break;
+                case 'odejmowanie':
+                    wynik = pierwsza - druga;
+                    break;
+                case 'mnozenie':
+                    wynik = pierwsza * druga;
+                    break;
+                case 'dzielenie':
+                    if (druga === 0) {
+                        wynikDiv.textContent = 'Nie dziel przez zero';
+                        return;
+                    }
+                    wynik = pierwsza / druga;
+                    break;
+                default:
+                    wynik = 'Błąd';
+            }
+
+            wynikDiv.textContent = wynik;
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,137 @@
+
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    color: black;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+#container {
+    display: flex;
+    flex: 1;
+    background-image: url(img/stronka.jpg);
+}
+
+
+.lista {
+    margin-left: 35px;
+    height: 100%;
+    width: 200px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    background-color: rgba(68, 125, 231, 0.493);
+}
+
+.lista ul {
+    list-style-type: none;
+}
+
+.lista a {
+    color: white;
+    text-decoration: none;
+    display: block;
+    padding: 5px;
+    background-color: #467dc8;
+    text-align: center;
+    border-radius: 4px;
+}
+
+.lista a:hover {
+    background-color: #365f99;
+}
+
+.hamburger {
+    display: none;
+    font-size: 30px;
+    cursor: pointer;
+}
+
+
+@media (max-width: 768px) {
+
+    .lista ul {
+        display: none;
+        flex-direction: column;
+        background-color: rgba(68, 125, 231, 0.8);
+    }
+
+
+    .hamburger {
+        display: block;
+        position: absolute;
+        top: 15px;
+        right: 15px;
+    }
+
+    .lista ul.active {
+        display: block;
+    }
+
+
+    .lista a {
+        background-color: #467dc8;
+    }
+}
+
+.main-content {
+    padding: 20px;
+    flex: 1;
+    margin-right: 35px;
+    overflow: auto;
+    background-color: rgba(68, 125, 231);
+    overflow-y: scroll;
+    height: 859px;
+}
+
+footer {
+    background-color: #002147;
+    color: white;
+    text-align: center;
+    width: 100%;
+    margin: auto;
+}
+
+footer p {
+    margin: auto;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: #4a90e2;
+    color: white;
+    text-align: left;
+    border-collapse: separate;
+    border-spacing: 5px;
+}
+
+th, td {
+    padding: 10px;
+}
+
+th {
+    background-color: #326FA4;
+    font-weight: bold;
+    text-align: center;
+}
+
+tr:nth-child(odd) td {
+    background-color: #5DADE2;
+}
+
+tr td {
+    color: black;
+    text-align: center;
+}
